@@ -1,0 +1,36 @@
+@import '../../less/mixins';
+@import '../../less/variables';
+//@import '../../less/mobileApp.less';
+
+.mainPanel {
+//  position: absolute;
+  background: @mainBackground;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  transition: 0.2s ease-out all;
+}
+
+.mainPanel.open {
+  box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  .translate(80%, 0px);
+}
+
+.contentHolder {
+//  overflow-x: hidden;
+//  overflow-y: scroll; /* has to be scroll, not auto */
+//  -webkit-overflow-scrolling: touch;
+}
+.content {
+  position: absolute;
+  top: 43px;
+  height: 100%;
+  width: 100%;
+}
+
+.sliderPanelBtn {}
+
+.sliderPanel {
+  z-index: 0;
+}

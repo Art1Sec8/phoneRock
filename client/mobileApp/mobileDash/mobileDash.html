@@ -1,0 +1,118 @@
+<template name="mobileApp">
+    <head>
+        <title>phoneRock</title>
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2V8IFYwB-Syx2-lauWq8EgjNmS7b8fMY">
+        </script>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>
+
+    {{> mainPanel}}
+    {{> sliderPanel}}
+
+</template>
+
+
+<template name="header">
+  <div class="bar bar-header bar-dark">
+    <button class="button button-icon icon ion-navicon sliderPanelBtn"></button>
+    <div class="h1 title">phoneRock</div>
+  </div>
+
+</template>
+
+
+<template name="mainPanel">
+
+    <div class="mainPanel">
+        {{> header}}
+            <div class="content">
+                {{> listClasses}}
+            </div>
+        {{> footer}}
+    </div>
+
+</template>
+
+<template name="listClasses">
+  <div class="list">
+    {{> classItem}}
+    {{> classItem}}
+    {{> classItem}}
+    {{> classItem}}
+    {{> classItem}}
+    {{> classItem}}
+  </div>
+</template>
+
+<template name="classItem">
+    <a class="item item-thumbnail-left" href="#">
+      <img src="http://photos3.meetupstatic.com/photos/event/e/6/2/a/highres_398338922.jpeg">
+      <h2>Meteor Presentation</h2>
+      <p>This should keep you busy</p>
+    </a>
+</template>
+
+<template name="profile">
+  <div class="list card">
+    <div class="item item-avatar">
+      <img src="http://photos.costume-works.com/thumbs/black_swan31.jpg">
+      <h2>Marty McFly</h2>
+      <p>November 05, 1955</p>
+    </div>
+
+    <div class="item item-body">
+      <img class="full-image" src="http://blog.codyapp.com/wp-content/uploads/2012/12/burn_barre_workout.jpg">
+      <p>
+        This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+        the content is from a card-body consisting of an image and paragraph text. The footer
+        consists of tabs, icons aligned left, within the card-footer.
+      </p>
+      <p>
+        <a href="#" class="subdued">1 Like</a>
+        <a href="#" class="subdued">5 Comments</a>
+      </p>
+    </div>
+
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <a class="tab-item" href="#">
+        <i class="icon ion-thumbsup"></i>
+        Like
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-chatbox"></i>
+        Comment
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-share"></i>
+        Share
+      </a>
+    </div>
+  </div>
+</template>
+
+<template name="favorite">
+ <h1>just a favorite!</h1>
+</template>
+
+<template name="footer">
+  <div class="bar bar-footer">
+    <div class="button-bar">
+      <a class="button button-clear homeBtn">
+        <i class="icon ion-home"></i>
+      </a>
+      <a class="button button-clear profileBtn">
+        <i class="icon ion-ios7-person"></i>
+      </a>
+      <a class="button button-clear favoriteBtn">
+        <i class="icon ion-star"></i>
+      </a>
+      <a class="button button-clear searchBtn">
+        <i class="icon ion-search"></i>
+      </a>
+      <a class="button button-clear settingBtn">
+        <i class="icon ion-gear-a"></i>
+      </a>
+    </div>
+  </div>
+</template>
