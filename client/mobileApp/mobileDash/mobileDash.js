@@ -8,11 +8,27 @@ mainPanelSwitch = function(newPanel) {
   return Session.set("mainPanel", newPanel);
 };
 
+Template.app.helpers ({
+  leftPanelOpen : function(){
+    if (Session.get("leftPanelOpen")) {
+      return "leftPanelOpen";
+    } else {
+      return false;
+    }
+  }
+})
+
 Template.header.events({
   'click .sliderPanelBtn': function(e) {
     e.preventDefault();
-    $(".mainPanel").toggleClass("open");
-    return $(".lPanelBtn").toggleClass("active");
+    // $(".mainPanel").toggleClass("open");
+    if(Session.get("leftPanelOpen")){
+      Session.set("leftPanelOpen",false);
+      return $(".lPanelBtn").toggleClass("active");  
+    } else {
+      Session.set("leftPanelOpen",true);
+      return $(".lPanelBtn").toggleClass("active");  
+    }
   }
 });
 

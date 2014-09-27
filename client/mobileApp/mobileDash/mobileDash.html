@@ -6,10 +6,17 @@
         </script>
         <meta name="viewport" content="width=device-width, user-scalable=no">
     </head>
+    {{> app}}
+    
 
+</template>
+
+
+<template name="app">
+  <body class="{{leftPanelOpen}}">
     {{> mainPanel}}
     {{> sliderPanel}}
-
+  </body>
 </template>
 
 

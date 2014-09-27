@@ -3,17 +3,20 @@
 //@import '../../less/mobileApp.less';
 
 .mainPanel {
-//  position: absolute;
+  position: absolute;
   background: @mainBackground;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   z-index: 10;
-  height: 100%;
-  width: 100%;
+  /*height: 100%;
+  width: 100%;*/
   transition: 0.2s ease-out all;
 }
 
-.mainPanel.open {
+.leftPanelOpen .mainPanel {
   box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.5);
-  position: absolute;
   .translate(80%, 0px);
 }
 
@@ -25,12 +28,25 @@
 .content {
   position: absolute;
   top: 43px;
-  height: 100%;
+  bottom: 44px;
   width: 100%;
+  overflow: scroll;
 }
 
 .sliderPanelBtn {}
 
 .sliderPanel {
-  z-index: 0;
+  z-index: 0;  
+}
+
+.sliderPanel .content {  
+  bottom: 0px;
+}
+
+.bar-footer {
+  position: fixed;
+}
+
+.bar-header {
+  position: fixed;
 }
