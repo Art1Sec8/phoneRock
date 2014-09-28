@@ -1,12 +1,15 @@
 Package.describe({
   summary: "Ionic css framework",
-  version: "1.0.0",
+  version: "1.0.2"
 });
 
-Package.onUse(function(api) {
-  api.addFiles('css/ionic.css', 'client');
-  api.addFiles('fonts/ionicons.eot', 'client');
-  api.addFiles('fonts/ionicons.svg', 'client');
-  api.addFiles('fonts/ionicons.ttf', 'client');
-  api.addFiles('fonts/ionicons.woff', 'client');
+Package.onUse(function (api) {
+
+  var path = Npm.require('path');
+
+  api.addFiles(path.join('css', 'ionic.css'), 'web');
+  api.addFiles(path.join('fonts', 'ionicons.eot'), 'web');
+  api.addFiles(path.join('fonts', 'ionicons.svg'), 'web');
+  api.addFiles(path.join('fonts', 'ionicons.ttf'), 'web');
+  api.addFiles(path.join('fonts', 'ionicons.woff'), 'web');
 });

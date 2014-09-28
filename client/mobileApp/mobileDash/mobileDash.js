@@ -1,4 +1,4 @@
-// creating reactivity for localstorage variable
+// creating reactivity for localStorage variable
 var sliderOpenDep = new Tracker.Dependency;
 
 /***
@@ -9,10 +9,7 @@ var getSliderOpen = function () {
   var storageValue = localStorage.getItem("sliderPanelOpen");
   sliderOpenDep.depend();
 
-  if (storageValue === "true" || storageValue === true) {
-    return true;
-  }
-  return false;
+  return !!(storageValue === "true" || storageValue === true);
 };
 
 /***
@@ -43,7 +40,6 @@ Template.app.helpers ({
 Template.header.helpers ({
   sliderActive: function () {
     if (getSliderOpen() === true) {
-      console.log(getSliderOpen());
       return "active";
     }
     return false;
