@@ -8,11 +8,11 @@ autopublish
 insecure
 iron:router
 less
-ionic
 mdg:camera
 mdg:geolocation
 mizzao:bootstrap-3
 chrismbeckett:fontawesome4
 google-maps
 reactive-var
+ionic
 
