@@ -1,5 +1,6 @@
 // creating reactivity for localStorage variable
 var sliderOpenDep = new Tracker.Dependency;
+//TODO need to create a reactive localStorage variable for the mainPanel switch
 
 /***
  * gets the status of the slider

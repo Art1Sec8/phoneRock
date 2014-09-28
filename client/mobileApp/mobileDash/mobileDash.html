@@ -34,7 +34,12 @@
     <div class="mainPanel">
         {{> header}}
             <div class="content">
-                {{> listClasses}}
+                {{#if mainPanel "listClasses"}}
+                    {{> listClasses}}
+                {{/if}}
+                {{#if mainPanel "profile"}}
+                    {{> profile}}
+                {{/if}}
             </div>
         {{> footer}}
     </div>
@@ -69,17 +74,17 @@
 <template name="profile">
   <div class="list card">
     <div class="item item-avatar">
-      <img src="http://photos.costume-works.com/thumbs/black_swan31.jpg">
+      <img src="http://photos3.meetupstatic.com/photos/event/e/6/2/a/highres_398338922.jpeg">
       <h2>Marty McFly</h2>
       <p>November 05, 1955</p>
     </div>
 
     <div class="item item-body">
-      <img class="full-image" src="http://blog.codyapp.com/wp-content/uploads/2012/12/burn_barre_workout.jpg">
+      <img class="full-image" src="https://www.meteor.com/blog/hackathon2013/3.jpg">
       <p>
-        This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-        the content is from a card-body consisting of an image and paragraph text. The footer
-        consists of tabs, icons aligned left, within the card-footer.
+          I'm excited to announce the second Meteor summer hackathon! Get ready for 24 hours of food, caffeine, code,
+          great company, and awesomeness at the Meteor office. We're looking for 100 sharp engineers, whether
+          experienced Meteorites or newcomers, who want to push the limits of what's possible in Meteor.
       </p>
       <p>
         <a href="#" class="subdued">1 Like</a>
