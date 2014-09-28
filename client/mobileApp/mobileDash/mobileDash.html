@@ -6,14 +6,14 @@
         </script>
         <meta name="viewport" content="width=device-width, user-scalable=no">
     </head>
+
     {{> app}}
-    
 
 </template>
 
 
 <template name="app">
-  <body class="{{leftPanelOpen}}">
+  <body class="{{sliderPanelOpen}}">
     {{> mainPanel}}
     {{> sliderPanel}}
   </body>
@@ -22,7 +22,7 @@
 
 <template name="header">
   <div class="bar bar-header bar-dark">
-    <button class="button button-icon icon ion-navicon sliderPanelBtn"></button>
+    <button class="button button-icon icon ion-navicon sliderPanelBtn {{sliderActive}}"></button>
     <div class="h1 title">phoneRock</div>
   </div>
 
@@ -42,14 +42,20 @@
 </template>
 
 <template name="listClasses">
-  <div class="list">
-    {{> classItem}}
-    {{> classItem}}
-    {{> classItem}}
-    {{> classItem}}
-    {{> classItem}}
-    {{> classItem}}
-  </div>
+    <div class="list">
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+        {{> classItem}}
+    </div>
 </template>
 
 <template name="classItem">

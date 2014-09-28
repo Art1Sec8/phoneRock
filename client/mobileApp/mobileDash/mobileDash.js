@@ -1,6 +1,29 @@
-/**
- * Created by michaelghobrial on 9/23/14.
+// creating reactivity for localstorage variable
+var sliderOpenDep = new Tracker.Dependency;
+
+/***
+ * gets the status of the slider
+ * @returns {bool}
  */
+var getSliderOpen = function () {
+  var storageValue = localStorage.getItem("sliderPanelOpen");
+  sliderOpenDep.depend();
+
+  if (storageValue === "true" || storageValue === true) {
+    return true;
+  }
+  return false;
+};
+
+/***
+ * sets the status of the slider
+ * @param isOpen {bool}
+ */
+var setSliderOpen = function (isOpen) {
+  localStorage.setItem(("sliderPanelOpen"), isOpen);
+  sliderOpenDep.changed();
+};
+
 
 var mainPanelSwitch;
 
@@ -9,25 +32,31 @@ mainPanelSwitch = function(newPanel) {
 };
 
 Template.app.helpers ({
-  leftPanelOpen : function(){
-    if (Session.get("leftPanelOpen")) {
-      return "leftPanelOpen";
-    } else {
-      return false;
+  sliderPanelOpen : function(){
+    if (getSliderOpen() === true) {
+      return "sliderPanelOpen";
     }
+    return false;
   }
-})
+});
+
+Template.header.helpers ({
+  sliderActive: function () {
+    if (getSliderOpen() === true) {
+      console.log(getSliderOpen());
+      return "active";
+    }
+    return false;
+  }
+});
 
 Template.header.events({
   'click .sliderPanelBtn': function(e) {
     e.preventDefault();
-    // $(".mainPanel").toggleClass("open");
-    if(Session.get("leftPanelOpen")){
-      Session.set("leftPanelOpen",false);
-      return $(".lPanelBtn").toggleClass("active");  
+    if(getSliderOpen() === true){
+      setSliderOpen(false);
     } else {
-      Session.set("leftPanelOpen",true);
-      return $(".lPanelBtn").toggleClass("active");  
+      setSliderOpen(true);
     }
   }
 });
