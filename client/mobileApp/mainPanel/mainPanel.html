@@ -1,11 +1,12 @@
+<head>
+    <title>phoneRock</title>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2V8IFYwB-Syx2-lauWq8EgjNmS7b8fMY">
+    </script>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+
 <template name="mobileApp">
-    <head>
-        <title>phoneRock</title>
-        <script type="text/javascript"
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2V8IFYwB-Syx2-lauWq8EgjNmS7b8fMY">
-        </script>
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-    </head>
 
     {{> app}}
 
@@ -25,7 +26,6 @@
     <button class="button button-icon icon ion-navicon sliderPanelBtn {{sliderActive}}"></button>
     <div class="h1 title">phoneRock</div>
   </div>
-
 </template>
 
 
@@ -34,11 +34,14 @@
     <div class="mainPanel">
         {{> header}}
             <div class="content">
-                {{#if mainPanel "listClasses"}}
-                    {{> listClasses}}
+                {{#if mainPanel "homePanel"}}
+                    {{> homePanel}}
                 {{/if}}
-                {{#if mainPanel "profile"}}
-                    {{> profile}}
+                {{#if mainPanel "favorite"}}
+                    {{> favorite}}
+                {{/if}}
+                {{#if mainPanel "mapPanel"}}
+                    {{> mapPanel}}
                 {{/if}}
             </div>
         {{> footer}}
@@ -46,7 +49,7 @@
 
 </template>
 
-<template name="listClasses">
+<template name="homePanel">
     <div class="list">
         {{> classItem}}
         {{> classItem}}
@@ -71,7 +74,7 @@
     </a>
 </template>
 
-<template name="profile">
+<template name="favorite">
   <div class="list card">
     <div class="item item-avatar">
       <img src="http://photos3.meetupstatic.com/photos/event/e/6/2/a/highres_398338922.jpeg">
@@ -109,28 +112,23 @@
   </div>
 </template>
 
-<template name="favorite">
- <h1>just a favorite!</h1>
-</template>
+
 
 <template name="footer">
-  <div class="bar bar-footer">
-    <div class="button-bar">
-      <a class="button button-clear homeBtn">
-        <i class="icon ion-home"></i>
-      </a>
-      <a class="button button-clear profileBtn">
-        <i class="icon ion-ios7-person"></i>
-      </a>
-      <a class="button button-clear favoriteBtn">
-        <i class="icon ion-star"></i>
-      </a>
-      <a class="button button-clear searchBtn">
-        <i class="icon ion-search"></i>
-      </a>
-      <a class="button button-clear settingBtn">
-        <i class="icon ion-gear-a"></i>
-      </a>
+    <div class="bar bar-footer">
+        <div class="button-bar">
+            <a id="home" class="button button-clear homeBtn {{active 'homePanel'}}" >
+                <i class="icon ion-home"></i>
+            </a>
+            <a id="favorite" class="button button-clear favoriteBtn {{active 'favorite'}}">
+                <i class="icon ion-star"></i>
+            </a>
+            <a id="maps" class="button button-clear mapsBtn {{active 'mapPanel'}}">
+                <i class="icon ion-map"></i>
+            </a>
+            <a id="images" class="button button-clear imagesBtn {{active 'cameraPanel'}}">
+                <i class="icon ion-images"></i>
+            </a>
+        </div>
     </div>
-  </div>
 </template>
