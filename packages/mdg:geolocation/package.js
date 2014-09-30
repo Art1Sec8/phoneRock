@@ -15,3 +15,4 @@ Package.on_use(function (api) {
   api.add_files(["geolocation.js"], "web");
   api.export("Geolocation", "web");
 });
+

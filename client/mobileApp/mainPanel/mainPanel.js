@@ -71,11 +71,11 @@ Template.header.events({
 
 Template.mainPanel.rendered = function() {
   // check to see if the mainPanel has been set in localStorage
-  var mainPanel = getMainPanel();
-  if (typeof mainPanel === undefined || mainPanel === null) {
-    // we should the mainPanel to a default
-    setMainPanel("homePanel");
-  }
+//  var mainPanel = getMainPanel();
+//  var sliderPanel = getSliderOpen();
+//
+  setMainPanel("homePanel");
+  setSliderOpen(false);
 };
 
 Template.mainPanel.helpers({
