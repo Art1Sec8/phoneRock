@@ -9,10 +9,10 @@ insecure
 iron:router
 less
 mdg:camera
-mdg:geolocation
 mizzao:bootstrap-3
 chrismbeckett:fontawesome4
 reactive-var
 ionic
 google-maps
+mdg:geolocation
 
